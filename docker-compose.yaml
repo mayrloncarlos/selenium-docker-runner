@@ -47,5 +47,4 @@ services:
     - HUB_HOST=selenium-hub
     - MODULE=book-flight-module.xml
     volumes:
-    - ./book-result:/usr/share/udemy/test-output
-    
+    - ./book-result:/usr/share/udemy/test-output 
