@@ -26,7 +26,7 @@ services:
     environment:
     - HUB_HOST=selenium-hub
     - HUB_PORT=4444
-  search-module1:
+  search-module:
     image: mayrloncarlos/selenium-docker
     depends_on:
     - chrome
@@ -36,19 +36,8 @@ services:
     - HUB_HOST=selenium-hub
     - MODULE=search-module.xml
     volumes:
-    - ./search-result1:/usr/share/udemy/test-output
-  search-module2:
-    image: mayrloncarlos/selenium-docker
-    depends_on:
-    - chrome
-    - firefox
-    environment:
-    - BROWSER=chrome
-    - HUB_HOST=selenium-hub
-    - MODULE=search-module.xml
-    volumes:
-    - ./search-result2:/usr/share/udemy/test-output
-  book-flight-module1:
+    - ./search-result:/usr/share/udemy/test-output
+  book-flight-module:
     image: mayrloncarlos/selenium-docker
     depends_on:
     - chrome
@@ -58,16 +47,5 @@ services:
     - HUB_HOST=selenium-hub
     - MODULE=book-flight-module.xml
     volumes:
-    - ./book-result1:/usr/share/udemy/test-output
-  book-flight-module2:
-    image: mayrloncarlos/selenium-docker
-    depends_on:
-    - chrome
-    - firefox
-    environment:
-    - BROWSER=firefox
-    - HUB_HOST=selenium-hub
-    - MODULE=book-flight-module.xml
-    volumes:
-    - ./book-result2:/usr/share/udemy/test-output
+    - ./book-result:/usr/share/udemy/test-output
     
